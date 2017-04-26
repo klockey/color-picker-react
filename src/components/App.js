@@ -1,40 +1,19 @@
 import React, { Component } from 'react'
 import Slider from './Slider'
+import { observer } from 'mobx-react'
+// import { observable } from 'mobx'
+import store from '../store'
 
-class App extends Component {
-  state = {
-    hueVal: 0,
-    satVal: 50,
-    lightVal: 50
-  }
-
-  x = (val) => {
-    this.setState({
-      hueVal: val
-    })
-  }
-
-  y = (val) => {
-    this.setState({
-      satVal: val
-    })
-  }
-
-  z = (val) => {
-    this.setState({
-      lightVal: val
-    })
-  }
-
+@observer class App extends Component {
   render () {
-    const color = `hsl(${this.state.hueVal}, ${this.state.satVal}%, ${this.state.lightVal}%)`
+    const color = `hsl(${store.hueVal}, ${store.satVal}%, ${store.lightVal}%)`
     return (
       <div className='container'>
         <div className='swatch' style={{backgroundColor: color}} />
         <div className='number'>{color}</div>
-        <Slider change={this.x} />
-        <Slider change={this.y} />
-        <Slider change={this.z} />
+        <Slider change={store.x} />
+        <Slider change={store.y} />
+        <Slider change={store.z} />
       </div>
     )
   }

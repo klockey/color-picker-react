@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { observer } from 'mobx-react'
+import { computed, observable } from 'mobx'
 
 class Slider extends Component {
   _change = (event) => {
