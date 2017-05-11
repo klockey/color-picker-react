@@ -1,4 +1,4 @@
 # Color Picker React
 
 
-Pick a combinatioin of colors from the palette. Written in React. 
+**Pick a combination of colors to be displayed** from the palette. Written in React. 
